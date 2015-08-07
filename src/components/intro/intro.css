@@ -1,0 +1,28 @@
+@import '../../styles/base.css';
+
+.Intro .Word,
+.Intro .Letter {
+  margin: 0;
+}
+
+.Intro .Letter {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+
+  height: 100px;
+
+  display: none;
+}
+
+@media (--wide-viewport) {
+  .Intro .Letter {
+    height: 175px;
+  }
+}
+
+.Intro .Letter.is-animating {
+  display: block;
+}

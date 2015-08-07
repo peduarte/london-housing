@@ -1,0 +1,144 @@
+@import 'base.css';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--backgroundColor);
+  color: white;
+  padding: 7rem 1.6rem 3rem;
+  font-family: var(--font);
+  font-size: var(--font-size);
+  line-height: 2.1rem;
+  font-weight: 300;
+  text-align: center;
+
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (--small-viewport) {
+  body {
+    padding-top: 3rem;
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+h1 {
+  font-style: italic;
+  font-size: var(--font-size);
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 0 1rem;
+  border-bottom: 1px solid #4d4d4d;
+
+  position: relative;
+  z-index: 5;
+
+  opacity: 0;
+  transition: opacity 600ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+body.is-ready h1 { opacity: 1; }
+
+
+/**
+ * Animation settings for App holder
+ */
+.App {
+  opacity: 0;
+  transition: opacity 600ms 800ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+body.is-ready .App { opacity: 1;}
+
+.Container {
+  margin: 0 auto;
+  max-width: 80rem;
+}
+
+@media (--wide-viewport) {
+  .Container {
+    max-width: 92rem;
+  }
+}
+
+@media (--huge-viewport) {
+  .Container {
+    max-width: 120rem;
+  }
+}
+
+
+
+/**
+ * Button
+ */
+.Button {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  border: 1px solid #4d4d4d;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  position: relative;
+  appearance: none;
+  transition: all 100ms ease-out;
+
+  background: #000;
+  background-size: 50%;
+  text-indent: 999999px;
+}
+
+
+@media (--wide-viewport) {
+  .Button {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+.Button .Asset {
+  display: block;
+  width: 65%;
+  height: auto;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  fill: #fff;
+}
+
+.Button .Asset--close { width: 45%; }
+.Button .Asset--facebook { width: 45%; }
+.Button .Asset--twitter { width: 45%; }
+
+.Button:hover {
+  border-color: #fff;
+  background: #fff;
+  cursor: pointer;
+}
+
+.Button:hover .Asset {
+  fill: #000;
+}
+
+.Button:focus { outline: 0; }
