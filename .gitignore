@@ -1,9 +1,0 @@
-.DS_Store
-.DS_Store?
-
-*.log
-
-node_modules/
-dist/
-
-ship.conf
