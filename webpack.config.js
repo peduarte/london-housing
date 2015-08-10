@@ -1,6 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
+var data = require('./data');
 
 module.exports = {
 
@@ -9,21 +11,19 @@ module.exports = {
 
   // http://gaearon.github.io/react-hot-loader/getstarted/
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './src/app',
-    './src/index.html'
+    './src/app.js'
   ],
 
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/',
+    libraryTarget: 'umd'
   },
 
   plugins: [
     new ExtractTextPlugin('styles.css'), // extracts css
-    new webpack.HotModuleReplacementPlugin(), // hot-mode
+    new StaticSiteGeneratorPlugin('bundle.js', data.routes, data),
     new webpack.NoErrorsPlugin() // https://github.com/webpack/docs/wiki/list-of-plugins#noerrorsplugin
   ],
 

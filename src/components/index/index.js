@@ -1,33 +1,4 @@
-import './styles/styles.css';
-import './styles/wallop-slider.css';
-
-import React from 'react';
-import Router from 'react-router';
-import Routes from './Routes.js';
-
-import FastClick from 'fastclick';
-FastClick.attach(document.body);
-
-console.log('app -> ');
-
-
-// run on client
-if (typeof document !== 'undefined') {
-  var initialProps = JSON.parse(document.getElementById('initial-props').innerHTML);
-  Router.run(Routes, Router.HistoryLocation, function (Handler) {
-    React.render(React.createElement(Handler, initialProps), document)
-  })
-}
-
-module.exports = function render(locals, callback) {
-  Router.run(Routes, locals.path, function (Handler) {
-    var html = React.renderToString(React.createElement(Handler, locals))
-    callback(null, '<!DOCTYPE html>' + html)
-  })
-};
-
-/*
-import React from 'react';
+/*import React from 'react';
 import gsx from 'gsx';
 import FastClick from 'fastclick';
 
@@ -89,3 +60,33 @@ React.render(
 )*/
 
 
+import React from 'react';
+
+import Intro from '../intro/intro.js';
+import NewsList from '../news-list/news-list.js';
+import Footer from '../footer/footer.js';
+import About from '../about/about.js';
+import RefreshIcon from '../assets/refresh.js';
+
+import localData from '../../data/headlines.js';
+import helpers from '../../helpers.js';
+
+export default React.createClass({
+  render() {
+    if (typeof document !== 'undefined') {
+      helpers.addClass(document.querySelector('body'), 'is-ready');
+    }
+
+    return (
+      <div id="App" className="App Container">
+        <div className="WallopSlider WallopSlider--fade">
+          <NewsList data={localData} />
+          <button className="Button WallopSlider-btn WallopSlider-btn--previous" disabled="disabled">Previous</button>
+          <button className="Button WallopSlider-btn WallopSlider-btn--next btn">Next <RefreshIcon /></button>
+        </div>
+        <About />
+        <Footer />
+      </div>
+    )
+  }
+});

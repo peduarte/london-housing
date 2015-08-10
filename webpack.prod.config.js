@@ -25,16 +25,7 @@ config.cssloader = {
   aggressiveMerging: false
 },
 
-config.entry = [
-  './src/app',
-  './src/index.html'
-];
-
-config.output = {
-  path: path.join(__dirname, 'dist'),
-  filename: 'bundle.js',
-  publicPath: './'
-},
+config.output.publicPath = './',
 
 config.plugins.push(
   new webpack.DefinePlugin({
