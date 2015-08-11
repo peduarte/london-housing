@@ -5,6 +5,13 @@ import React from 'react';
 import gsx from 'gsx';
 import FastClick from 'fastclick';
 
+import Router from 'react-router'; // or var Router = ReactRouter; in browsers
+
+var DefaultRoute = Router.DefaultRoute;
+var Link = Router.Link;
+var Route = Router.Route;
+var RouteHandler = Router.RouteHandler;
+
 import localData from './data/headlines.js';
 import Intro from './components/intro/intro.js';
 import NewsList from './components/news-list/news-list.js';
@@ -19,7 +26,7 @@ FastClick.attach(document.body);
 if (process.env.NODE_ENV === 'development') {
   setTimeout(function() {
     initApp(localData);
-  }, 500);
+  }, 1000);
 } else {
   setTimeout(function() {
     loadData();

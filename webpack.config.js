@@ -9,8 +9,6 @@ module.exports = {
 
   // http://gaearon.github.io/react-hot-loader/getstarted/
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
     './src/app',
     './src/index.html'
   ],
