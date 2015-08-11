@@ -4,9 +4,10 @@
   "description": "A visual comment on the property market insanity in London",
   "main": "app.js",
   "scripts": {
-    "build": "webpack -p --config webpack.prod.config.js --profile --progress --colors",
+    "build": "webpack -p --config webpack.prod.config.js --profile --progress --colors && npm run copy-static-files",
     "dev": "webpack-dev-server --config webpack.dev.config.js --profile --progress --colors --hot",
-    "deploy": "cp src/images/static/* dist/ && ship dist -to gh-pages"
+    "deploy": "ship dist -to gh-pages",
+    "copy-static-files": "cp CNAME dist/ && cp src/images/static/* dist/"
   },
   "repository": {
     "type": "git",
