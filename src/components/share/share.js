@@ -16,7 +16,9 @@ export default React.createClass({
           return 'https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flondon-housing.uk';
           break;
          case 'twitter':
-          return 'https://twitter.com/intent/tweet?url=http%3A%2F%2Flondon-housing.uk&text=London%20Housing%20Headlines&hashtags=crisis,london,housing';
+
+
+          return 'https://twitter.com/intent/tweet?url=http%3A%2F%2Flondon-housing.uk&text=London%20Housing%20Headlines%20%E2%80%93%20A%20visual%20comment%20on%20the%20property%20market%20insanity%20in%20London&hashtags=crisis,london,housing';
           break;
       }
     }();

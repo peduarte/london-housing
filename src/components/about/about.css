@@ -34,7 +34,14 @@
 .About p {
   max-width: var(--content-width);
   margin: 2rem auto;
-  padding: 0 1.6rem;
+  padding: 0 2rem;
+}
+
+@media (--wide-viewport) {
+  .About p {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .About a {
