@@ -14,7 +14,7 @@
 
 @media (--wide-viewport) {
   .Word {
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
   }
 }
