@@ -37,6 +37,7 @@ import z from '../images/z.jpg'
 import colon from '../images/colon.jpg'
 import comma from '../images/comma.jpg'
 import period from '../images/period.jpg'
+import hyphen from '../images/hyphen.jpg'
 import pound from '../images/pound.jpg'
 import apostrophe from '../images/apostrophe.jpg'
 import exclamation from '../images/exclamation.jpg'
@@ -82,6 +83,7 @@ export default {
   colon,
   comma,
   period,
+  hyphen,
   pound,
   apostrophe,
   exclamation

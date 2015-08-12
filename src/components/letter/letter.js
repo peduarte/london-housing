@@ -64,6 +64,11 @@ export default React.createClass({
           letter = 'period';
           break;
 
+        case '-':
+        case '–':
+          letter = 'hyphen';
+          break;
+
         case '£':
           letter = 'pound';
           break;
