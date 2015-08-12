@@ -20,8 +20,8 @@ export default React.createClass({
       <footer className="Footer">
         <nav>
           <a className="Footer-aboutLink" href="#" onClick={this.showAbout}>About the project</a>
-          <Share network="twitter"><TwitterIcon /></Share>
           <Share network="facebook"><FacebookIcon /></Share>
+          <Share network="twitter"><TwitterIcon /></Share>
         </nav>
       </footer>
     )
